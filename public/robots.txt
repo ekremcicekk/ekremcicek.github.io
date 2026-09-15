@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ekremcicekk.github.io/ekremcicek.github.io/sitemap.xml
+Sitemap: https://ekremcicekk.github.io/sitemap.xml

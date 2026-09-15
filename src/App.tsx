@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
-    <BrowserRouter basename="/ekremcicek.github.io">
+    <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />

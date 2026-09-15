@@ -1,10 +1,9 @@
 # Ekrem Cicek — Portfolio
 
-Source for [ekremcicekk.github.io/ekremcicek.github.io](https://ekremcicekk.github.io/ekremcicek.github.io/),
-the personal portfolio of Ekrem Cicek (3D Artist / Game Artist / Unity Developer). Built with React,
-TypeScript, Vite and Tailwind CSS, and deployed as a static site on GitHub Pages as a project page
-(the GitHub account is `ekremcicekk`, so this repo is served at a subpath rather than the root
-domain — see `base` in `vite.config.ts` and `basename` in `src/App.tsx` if that ever changes).
+Source for [ekremcicekk.github.io](https://ekremcicekk.github.io), the personal portfolio of Ekrem
+Cicek (3D Artist / Game Artist / Unity Developer). Built with React, TypeScript, Vite and Tailwind
+CSS, and deployed as a static site on GitHub Pages as a user page (repo name matches the GitHub
+account `ekremcicekk` exactly, so it serves at the root domain).
 
 ## Stack
 
