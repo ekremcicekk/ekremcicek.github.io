@@ -5,11 +5,14 @@ import { companies, allGames } from "../data/companies";
 
 export default function Work() {
   const [active, setActive] = useState<string>("all");
+  const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
-    if (active === "all") return allGames;
-    return allGames.filter((game) => game.companySlug === active);
-  }, [active]);
+    const byCompany = active === "all" ? allGames : allGames.filter((game) => game.companySlug === active);
+    const q = query.trim().toLowerCase();
+    if (!q) return byCompany;
+    return byCompany.filter((game) => game.title.toLowerCase().includes(q));
+  }, [active, query]);
 
   return (
     <>
@@ -29,23 +32,38 @@ export default function Work() {
           to its live store listing.
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-2">
-          <FilterButton label={`All (${allGames.length})`} isActive={active === "all"} onClick={() => setActive("all")} />
-          {companies.map((company) => (
-            <FilterButton
-              key={company.slug}
-              label={`${company.name} (${company.games.length})`}
-              isActive={active === company.slug}
-              onClick={() => setActive(company.slug)}
-            />
-          ))}
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap gap-2">
+            <FilterButton label={`All (${allGames.length})`} isActive={active === "all"} onClick={() => setActive("all")} />
+            {companies.map((company) => (
+              <FilterButton
+                key={company.slug}
+                label={`${company.name} (${company.games.length})`}
+                isActive={active === company.slug}
+                onClick={() => setActive(company.slug)}
+              />
+            ))}
+          </div>
+
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search titles…"
+            aria-label="Search shipped titles"
+            className="w-full rounded-full border border-line bg-panel/40 px-4 py-2 text-sm text-paper placeholder:text-muted-2 outline-none transition-colors focus:border-accent/50 sm:w-56"
+          />
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          {filtered.map((game) => (
-            <GameCard key={`${game.companySlug}-${game.slug}`} game={game} companyName={game.company} />
-          ))}
-        </div>
+        {filtered.length > 0 ? (
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {filtered.map((game) => (
+              <GameCard key={`${game.companySlug}-${game.slug}`} game={game} companyName={game.company} />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-16 text-sm text-muted">No titles match "{query}".</p>
+        )}
       </section>
     </>
   );

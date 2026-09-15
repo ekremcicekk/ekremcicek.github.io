@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Sora", "Manrope", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
 
   --color-ink: #0c0c0d;
   --color-ink-2: #131314;
@@ -12,8 +12,8 @@
   --color-paper: #f3f1ec;
   --color-muted: #9c988f;
   --color-muted-2: #6d6a63;
-  --color-accent: #c98a4b;
-  --color-accent-soft: #c98a4b1a;
+  --color-accent: #3fae8a;
+  --color-accent-soft: #3fae8a1a;
 }
 
 @layer base {

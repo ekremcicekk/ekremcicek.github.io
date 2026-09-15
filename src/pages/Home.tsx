@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo";
 import { GameCard } from "../components/GameCard";
+import { PlatformsSection } from "../components/PlatformsSection";
 import { companies, allGames } from "../data/companies";
 import { site } from "../data/site";
 
@@ -56,6 +57,12 @@ export default function Home() {
           >
             Get in touch
           </Link>
+          <Link
+            to="/about#cv"
+            className="inline-flex items-center gap-2 self-center font-display text-sm text-muted underline decoration-line underline-offset-4 hover:text-accent"
+          >
+            View CV
+          </Link>
         </div>
       </section>
 
@@ -102,6 +109,8 @@ export default function Home() {
         </div>
       </section>
 
+      <PlatformsSection />
+
       <section className="border-t border-line/70">
         <div className="container-page flex flex-col items-start gap-6 py-20 md:flex-row md:items-center md:justify-between md:py-24">
           <div>
@@ -109,7 +118,7 @@ export default function Home() {
               Interested in working together?
             </h2>
             <p className="mt-2 max-w-md text-sm text-muted">
-              Open to new opportunities in 3D art, game art and Unity development.
+              Open to new opportunities in 3D art and game art.
             </p>
           </div>
           <Link

@@ -1,9 +1,9 @@
 # Ekrem Cicek — Portfolio
 
 Source for [ekremcicekk.github.io](https://ekremcicekk.github.io), the personal portfolio of Ekrem
-Cicek (3D Artist / Game Artist / Unity Developer). Built with React, TypeScript, Vite and Tailwind
-CSS, and deployed as a static site on GitHub Pages as a user page (repo name matches the GitHub
-account `ekremcicekk` exactly, so it serves at the root domain).
+Cicek (3D Artist / Game Artist). Built with React, TypeScript, Vite and Tailwind CSS, and deployed
+as a static site on GitHub Pages as a user page (repo name matches the GitHub account
+`ekremcicekk` exactly, so it serves at the root domain).
 
 ## Stack
 
@@ -68,6 +68,18 @@ array at the top of the file.
 
 Overwrite the file at its existing path under `public/images/`. No code changes needed as long as
 the filename stays the same (or update the `icon`/`logo` path in `companies.ts` if you rename it).
+
+### Update the CV
+
+Overwrite [`public/cv/ekrem-cicek-cv.pdf`](public/cv/ekrem-cicek-cv.pdf) with the new file, keeping
+the same filename — every "Download CV" link (Home, About, Contact) points at that one path, so no
+code changes are needed. If you want to rename the file, update `cvUrl` in
+[`src/data/site.ts`](src/data/site.ts) to match.
+
+### Update marketplace / 3D art platform links
+
+Edit the `platforms` array in [`src/data/site.ts`](src/data/site.ts) (Unity Asset Store, Fab,
+ArtStation, Sketchfab). Shown on the Home page and linked from Contact.
 
 ## Local development
 

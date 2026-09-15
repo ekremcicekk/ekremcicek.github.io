@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo";
-import { site } from "../data/site";
+import { site, platforms } from "../data/site";
 
 export default function Contact() {
   return (
@@ -12,7 +13,7 @@ export default function Contact() {
           Let's talk
         </h1>
         <p className="mt-4 max-w-lg text-base text-muted md:text-lg">
-          Open to new opportunities in 3D art, game art and Unity development. Reach out directly.
+          Open to new opportunities in 3D art and game art. Reach out directly.
         </p>
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -30,6 +31,26 @@ export default function Contact() {
           >
             LinkedIn Profile
           </a>
+          <Link
+            to="/about#cv"
+            className="rounded-full border border-line px-6 py-3 text-center font-display text-sm font-medium text-paper transition-colors hover:border-accent hover:text-accent"
+          >
+            View CV
+          </Link>
+        </div>
+
+        <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-line/70 pt-8">
+          {platforms.map((platform) => (
+            <a
+              key={platform.url}
+              href={platform.url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-muted underline decoration-line underline-offset-4 hover:text-accent"
+            >
+              {platform.name}
+            </a>
+          ))}
         </div>
       </section>
     </>
