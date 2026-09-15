@@ -19,10 +19,10 @@ src/
   data/
     types.ts        # Company / Game / StoreLink types
     companies.ts     # All studios + shipped games — THE content source of truth
-    assets.ts        # Unity Asset Store listings (image-first showcase on Work)
-    site.ts          # Name, role, email, LinkedIn, CV path, nav, platform links
-  components/         # Layout, WorkTile, FeaturedGameCard, AssetTile, CompanyBlock, Seo
-  pages/              # Home, Work, Experience, About, Contact
+    assets.ts        # Unity Asset Store listings, shown on /asset-store and /3d-art
+    site.ts          # Name, role, email, LinkedIn, CV path, nav, 3D-art platform links
+  components/         # Layout, CategoryBand, WorkTile, AssetTile, Seo
+  pages/              # Home, Games, AssetStore, ThreeDArt, About, Contact
 public/
   images/
     companies/        # Studio logos
@@ -30,6 +30,14 @@ public/
     assets/            # Unity Asset Store thumbnails
   cv/                  # CV PDF
 ```
+
+## Site structure
+
+The homepage is three full-width category bands — Mobile Games, Unity Asset Store, 3D Art — each a
+collage of real thumbnails linking to its own dedicated page. These three categories are always
+kept separate (their own nav items, their own pages, their own grids) rather than mixed into one
+grid — that separation is a deliberate, explicit design decision, not an oversight, so don't merge
+them back together when extending the site.
 
 ## Everyday workflow: adding or editing a project
 
@@ -50,26 +58,23 @@ entry to its `games` array:
 ```
 
 Drop the icon file at the matching path under `public/images/games/<studio-slug>/`. That's it — it
-automatically appears on Work and Experience with no other changes.
+automatically appears on the Games page (and in the Home page's Mobile Games band collage, which
+just pulls the first 24 game icons) with no other changes.
 
 **Order matters for Dodo Games (the current studio):** its `games` array is newest-first — add new
-titles at the *top* of that array. The Home page's "Latest work" section just shows the first 8
-entries of `companies[0].games`, so the newest title always leads. The other studios' order doesn't
-drive anything and can stay as-is.
+titles at the *top* of that array.
 
 ### Add a new studio
 
 Add a new object to the `companies` array in `companies.ts` with `name`, `slug`, `logo`, `devUrl`,
-and a `games` array. Drop the logo at `public/images/companies/<slug>.png`. If this becomes the
-current/most-recent studio, move its object to the front of the `companies` array (index 0) so it
-drives the Home page's "Latest work" section.
+and a `games` array. Drop the logo at `public/images/companies/<slug>.png`.
 
 ### Add or update a Unity Asset Store listing
 
 Add an entry to the `unityAssets` array in [`src/data/assets.ts`](src/data/assets.ts) with `id`,
 `title`, `slug`, `category` (`"Templates"` or `"3D"`), `href` (the asset's store URL) and `img`
-(path under `public/images/assets/`). Drop the thumbnail at that path. Shown on the Work page's
-"Unity Asset Store" tab.
+(path under `public/images/assets/`). Drop the thumbnail at that path. Shown on the `/asset-store`
+page (all listings) and, if `category` is `"3D"`, also on `/3d-art`.
 
 ### Update contact info, name, or role
 
@@ -88,14 +93,14 @@ the filename stays the same (or update the `icon`/`logo` path in `companies.ts` 
 ### Update the CV
 
 Overwrite [`public/cv/ekrem-cicek-cv.pdf`](public/cv/ekrem-cicek-cv.pdf) with the new file, keeping
-the same filename — every "Download CV" link (Home, About, Contact) points at that one path, so no
-code changes are needed. If you want to rename the file, update `cvUrl` in
+the same filename — the embedded preview and "View CV" links (Home, About, Contact) all point at
+that one path, so no code changes are needed. If you want to rename the file, update `cvUrl` in
 [`src/data/site.ts`](src/data/site.ts) to match.
 
-### Update marketplace / 3D art platform links
+### Update 3D art platform links
 
-Edit the `platforms` array in [`src/data/site.ts`](src/data/site.ts) (Unity Asset Store, Fab,
-ArtStation, Sketchfab). Shown on the Home page and linked from Contact.
+Edit the `threeDPlatforms` array in [`src/data/site.ts`](src/data/site.ts) (ArtStation, Sketchfab,
+Fab). Shown on the `/3d-art` page and linked from Contact.
 
 ## Local development
 

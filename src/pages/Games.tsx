@@ -1,15 +1,14 @@
 import { useMemo, useState } from "react";
 import { Seo } from "../components/Seo";
 import { WorkTile } from "../components/WorkTile";
-import { AssetTile } from "../components/AssetTile";
 import { companies, allGames } from "../data/companies";
-import { unityAssets } from "../data/assets";
+import { asset } from "../lib/asset";
 
-const UNITY_ASSETS_TAB = "unity-assets";
-
-export default function Work() {
+export default function Games() {
   const [active, setActive] = useState<string>("all");
   const [query, setQuery] = useState("");
+
+  const activeCompany = companies.find((c) => c.slug === active);
 
   const filtered = useMemo(() => {
     const byCompany = active === "all" ? allGames : allGames.filter((game) => game.companySlug === active);
@@ -18,26 +17,18 @@ export default function Work() {
     return byCompany.filter((game) => game.title.toLowerCase().includes(q));
   }, [active, query]);
 
-  const filteredAssets = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return unityAssets;
-    return unityAssets.filter((a) => a.title.toLowerCase().includes(q));
-  }, [query]);
-
-  const showingAssets = active === UNITY_ASSETS_TAB;
-
   return (
     <>
       <Seo
-        title="Work"
-        description="Mobile games shipped by Ekrem Cicek across Dodo Games, Moondark, Basix Games and Duuby, plus Unity Asset Store templates and packs."
-        path="/work"
+        title="Games"
+        description="Mobile games shipped by Ekrem Cicek across Dodo Games, Moondark, Basix Games and Duuby."
+        path="/games"
       />
 
       <section className="container-page py-6 md:py-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <h1 className="font-display text-2xl font-extrabold tracking-tighter text-paper md:text-3xl">
-            Work
+            Games
           </h1>
 
           <input
@@ -60,26 +51,34 @@ export default function Work() {
               onClick={() => setActive(company.slug)}
             />
           ))}
-          <FilterButton
-            label={`Unity Asset Store (${unityAssets.length})`}
-            isActive={showingAssets}
-            onClick={() => setActive(UNITY_ASSETS_TAB)}
-          />
         </div>
+
+        {activeCompany && (
+          <div className="mt-6 flex items-center gap-3">
+            <img
+              src={asset(activeCompany.logo)}
+              alt={`${activeCompany.name} logo`}
+              className="h-10 w-10 rounded-md border border-line/70 object-cover"
+            />
+            <div>
+              <p className="font-display text-sm font-semibold text-paper">{activeCompany.name}</p>
+              {activeCompany.devUrl && (
+                <a
+                  href={activeCompany.devUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs text-muted underline decoration-line underline-offset-4 hover:text-accent"
+                >
+                  {activeCompany.devUrlLabel ?? "Developer page"}
+                </a>
+              )}
+            </div>
+          </div>
+        )}
       </section>
 
       <section className="container-page pb-16">
-        {showingAssets ? (
-          filteredAssets.length > 0 ? (
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:gap-3 lg:grid-cols-4">
-              {filteredAssets.map((asset) => (
-                <AssetTile key={asset.id} asset={asset} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-sm text-muted">No assets match "{query}".</p>
-          )
-        ) : filtered.length > 0 ? (
+        {filtered.length > 0 ? (
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:gap-3 lg:grid-cols-6">
             {filtered.map((game) => (
               <WorkTile key={`${game.companySlug}-${game.slug}`} game={game} companyName={game.company} />

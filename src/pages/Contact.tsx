@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo";
-import { site, platforms } from "../data/site";
+import { site, threeDPlatforms, unityAssetStoreUrl } from "../data/site";
+
+const externalLinks = [{ name: "Unity Asset Store", url: unityAssetStoreUrl }, ...threeDPlatforms];
 
 export default function Contact() {
   return (
@@ -36,7 +38,7 @@ export default function Contact() {
         </div>
 
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-line/70 pt-6">
-          {platforms.map((platform) => (
+          {externalLinks.map((platform) => (
             <a
               key={platform.url}
               href={platform.url}

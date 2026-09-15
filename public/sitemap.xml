@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ekremcicekk.github.io/</loc></url>
-  <url><loc>https://ekremcicekk.github.io/work</loc></url>
-  <url><loc>https://ekremcicekk.github.io/experience</loc></url>
+  <url><loc>https://ekremcicekk.github.io/games</loc></url>
+  <url><loc>https://ekremcicekk.github.io/asset-store</loc></url>
+  <url><loc>https://ekremcicekk.github.io/3d-art</loc></url>
   <url><loc>https://ekremcicekk.github.io/about</loc></url>
   <url><loc>https://ekremcicekk.github.io/contact</loc></url>
 </urlset>

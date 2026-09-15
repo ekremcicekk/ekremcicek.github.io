@@ -11,10 +11,10 @@ export const site = {
 
 export const nav = [
   { label: "Home", to: "/" },
-  { label: "Work", to: "/work" },
-  { label: "Experience", to: "/experience" },
+  { label: "Games", to: "/games" },
+  { label: "Asset Store", to: "/asset-store" },
+  { label: "3D Art", to: "/3d-art" },
   { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
 ];
 
 export interface Platform {
@@ -23,17 +23,8 @@ export interface Platform {
   description: string;
 }
 
-export const platforms: Platform[] = [
-  {
-    name: "Unity Asset Store",
-    url: "https://assetstore.unity.com/publishers/78187",
-    description: "Unity game templates & asset packages",
-  },
-  {
-    name: "Fab",
-    url: "https://www.fab.com/sellers/EKStudio",
-    description: "3D models & marketplace assets",
-  },
+/** ArtStation, Sketchfab and Fab — shown on the 3D Art page. */
+export const threeDPlatforms: Platform[] = [
   {
     name: "ArtStation",
     url: "https://www.artstation.com/ekremcicek",
@@ -44,4 +35,11 @@ export const platforms: Platform[] = [
     url: "https://sketchfab.com/ekstudio",
     description: "Interactive 3D model viewer",
   },
+  {
+    name: "Fab",
+    url: "https://www.fab.com/sellers/EKStudio",
+    description: "3D models & marketplace assets",
+  },
 ];
+
+export const unityAssetStoreUrl = "https://assetstore.unity.com/publishers/78187";
