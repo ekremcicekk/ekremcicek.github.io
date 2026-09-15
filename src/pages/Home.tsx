@@ -35,7 +35,6 @@ export default function Home() {
 
       <div className="container-page flex flex-col gap-4 pb-16 md:gap-5">
         <CategoryBand
-          index="01"
           eyebrow="Mobile Games"
           stat={`${allGames.length}+ mobile games across ${companies.length} studios`}
           ctaLabel="View Games"
@@ -43,7 +42,6 @@ export default function Home() {
           images={gameImages}
         />
         <CategoryBand
-          index="02"
           eyebrow="Unity Asset Store"
           stat={`${unityAssets.length} templates & 3D packs`}
           ctaLabel="View Assets"
@@ -51,7 +49,6 @@ export default function Home() {
           images={assetImages}
         />
         <CategoryBand
-          index="03"
           eyebrow="3D Art & Models"
           stat="On ArtStation & Sketchfab"
           ctaLabel="View 3D Art"

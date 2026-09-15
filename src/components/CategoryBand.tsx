@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { asset } from "../lib/asset";
 
 interface CategoryBandProps {
-  index: string;
   eyebrow: string;
   stat: string;
   ctaLabel: string;
@@ -10,7 +9,7 @@ interface CategoryBandProps {
   images: string[];
 }
 
-export function CategoryBand({ index, eyebrow, stat, ctaLabel, to, images }: CategoryBandProps) {
+export function CategoryBand({ eyebrow, stat, ctaLabel, to, images }: CategoryBandProps) {
   return (
     <Link
       to={to}
@@ -31,14 +30,6 @@ export function CategoryBand({ index, eyebrow, stat, ctaLabel, to, images }: Cat
       </div>
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/75 to-ink/30" />
       <div className="relative flex h-full flex-col justify-center gap-3 px-6 md:px-12">
-        <div className="flex items-center gap-3">
-          <span className="flex h-7 w-7 items-center justify-center rounded-full border border-accent/60 font-display text-xs font-bold text-accent">
-            {index}
-          </span>
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            Category
-          </span>
-        </div>
         <h2 className="font-display text-2xl font-extrabold tracking-tighter text-paper sm:text-3xl md:text-4xl">
           {eyebrow}
         </h2>
