@@ -1,0 +1,113 @@
+import type { Company } from "./types";
+
+/**
+ * Source of truth: audited from https://ekrem-cicek.gitbook.io/history (2026-09-15).
+ * No dates, job titles, or descriptions exist in the source — only company name,
+ * developer store page, and shipped game titles/icons/links. Do not invent details;
+ * extend this file directly as real information becomes available.
+ */
+export const companies: Company[] = [
+  {
+    name: "Dodo Games",
+    slug: "dodo-games",
+    logo: "/images/companies/dodo-games.png",
+    devUrl: "https://apps.apple.com/us/developer/dodo-game-co/id1604391608?see-all=i-phonei-pad-apps",
+    devUrlLabel: "App Store Developer Page",
+    games: [
+      { title: "Stone Skipping 3D", slug: "stone-skipping-3d", icon: "/images/games/dodo-games/stone-skipping-3d.png", links: [{ label: "Sensor Tower", url: "https://app.sensortower.com/overview/com.DoDoGame.StoneSkipping3D?country=US" }] },
+      { title: "Card Shifting", slug: "card-shifting", icon: "/images/games/dodo-games/card-shifting.png", links: [{ label: "Sensor Tower", url: "https://app.sensortower.com/overview/com.DoDoGame.CardShifting?country=US" }] },
+      { title: "Spiral Drill Run", slug: "spiral-drill-run", icon: "/images/games/dodo-games/spiral-drill-run.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/spiral-drill-run/id6476618700" }] },
+      { title: "Upgrade N Smash", slug: "upgrade-n-smash", icon: "/images/games/dodo-games/upgrade-n-smash.png", links: [{ label: "Sensor Tower", url: "https://app.sensortower.com/overview/com.DoDoGame.UpgradeNSmash?country=US" }] },
+      { title: "Underwater Hunting", slug: "underwater-hunting", icon: "/images/games/dodo-games/underwater-hunting.png", links: [{ label: "Sensor Tower", url: "https://app.sensortower.com/overview/com.DoDoGame.UnderwaterHunting?country=US" }] },
+      { title: "Spray Art Run", slug: "spray-art-run", icon: "/images/games/dodo-games/spray-art-run.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/sprayartrun/id6476919902" }] },
+      { title: "Dozer Race", slug: "dozer-race", icon: "/images/games/dodo-games/dozer-race.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/dozer-race/id6737802561" }] },
+      { title: "Super Dogs ASMR", slug: "super-dogs-asmr", icon: "/images/games/dodo-games/super-dogs-asmr.png", links: [{ label: "Preview", url: "https://drive.google.com/file/d/1EdCMzAr_OGAVfJ_f5rkBZUdbSpbb-YAw/view?usp=sharing" }] },
+      { title: "Car Lot Reserve", slug: "car-lot-reserve", icon: "/images/games/dodo-games/car-lot-reserve.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/car-lot-reserve/id6737197656" }] },
+      { title: "Shift Shooter", slug: "shift-shooter", icon: "/images/games/dodo-games/shift-shooter.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/shift-shooter/id6737770929" }] },
+      { title: "Pool Cleaner", slug: "pool-cleaner", icon: "/images/games/dodo-games/pool-cleaner.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.DoDoGame.PoolCleaner" }] },
+      { title: "JumpNDig", slug: "jumpndig", icon: "/images/games/dodo-games/jumpndig.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/jumpndig/id6477444202" }] },
+      { title: "Food Jam", slug: "food-jam", icon: "/images/games/dodo-games/food-jam.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/food-serving-jam/id6737555107" }] },
+      { title: "Baggage Jam", slug: "baggage-jam", icon: "/images/games/dodo-games/baggage-jam.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/baggage-jam/id6737554226" }, { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.DoDoGame.BaggageJam" }] },
+      { title: "Car Jam 3D!", slug: "car-jam-3d", icon: "/images/games/dodo-games/car-jam-3d.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/car-jam-3d/id6737686773" }] },
+      { title: "Bounce Pops", slug: "bounce-pops", icon: "/images/games/dodo-games/bounce-pops.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/bounce-pops/id6737691390" }] },
+      { title: "Dunk Tank Run", slug: "dunk-tank-run", icon: "/images/games/dodo-games/dunk-tank-run.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/dunk-tank-run/id6737758455" }] },
+      { title: "Ski Jam!", slug: "ski-jam", icon: "/images/games/dodo-games/ski-jam.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/ski-jam/id6737802482" }] },
+      { title: "Seat Sorting Puzzle", slug: "seat-sorting-puzzle", icon: "/images/games/dodo-games/seat-sorting-puzzle.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/seat-sorting-puzzle/id6738688284" }] },
+      { title: "Mega Car Fly: Jet Pack Jumping", slug: "mega-car-fly", icon: "/images/games/dodo-games/mega-car-fly.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/mega-car-fly-jet-pack-jumping/id6739351159" }] },
+      { title: "The First Apple", slug: "the-first-apple", icon: "/images/games/dodo-games/the-first-apple.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/the-first-apple/id6736656021" }] },
+      { title: "Valet Parking Master", slug: "valet-parking-master", icon: "/images/games/dodo-games/valet-parking-master.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/valet-parking-master/id6505020622" }] },
+      { title: "Ultimate Offroad Simulator", slug: "ultimate-offroad-simulator", icon: "/images/games/dodo-games/ultimate-offroad-simulator.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/ultimate-offroad-simulator/id6636492246" }] },
+      { title: "No Limits: Drag Racing", slug: "no-limits-drag-racing", icon: "/images/games/dodo-games/no-limits-drag-racing.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/no-limits-drag-racing/id6736642667" }] },
+      { title: "Car Crash - Stunt Parkour", slug: "car-crash-stunt-parkour", icon: "/images/games/dodo-games/car-crash-stunt-parkour.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/car-crash-stunt-parkour/id6738789195" }] },
+      { title: "Car Packer", slug: "car-packer", icon: "/images/games/dodo-games/car-packer.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/car-packer-blast-block-puzzle/id6740430604" }] },
+      { title: "Click Stack", slug: "click-stack", icon: "/images/games/dodo-games/click-stack.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/click-stack/id6741423543" }] },
+      { title: "Traffic Jam! Puzzle", slug: "traffic-jam-puzzle", icon: "/images/games/dodo-games/traffic-jam-puzzle.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/traffic-jam-puzzle/id6744321008" }] },
+      { title: "Color Blast Jam!", slug: "color-blast-jam", icon: "/images/games/dodo-games/color-blast-jam.png", links: [{ label: "App Store", url: "https://apps.apple.com/us/app/color-blast-jam/id6744829038" }] },
+    ],
+  },
+  {
+    name: "Moondark",
+    slug: "moondark",
+    logo: "/images/companies/moondark.png",
+    devUrl: "https://play.google.com/store/apps/dev?id=6158066966097810104",
+    devUrlLabel: "Play Store Developer Page",
+    games: [
+      { title: "Portal Runner", slug: "portal-runner", icon: "/images/games/moondark/portal-runner.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.moondark.portalrunner" }] },
+      { title: "Make the Basket!", slug: "make-the-basket", icon: "/images/games/moondark/make-the-basket.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.moondark.makethebasket" }, { label: "AppBrain", url: "https://www.appbrain.com/app/make-the-basket/com.moondark.makethebasket" }] },
+      { title: "Mixing Monsters", slug: "mixing-monsters", icon: "/images/games/moondark/mixing-monsters.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.moondark.mixingmonsters" }, { label: "AppBrain", url: "https://www.appbrain.com/app/mixing-monsters/com.moondark.mixingmonsters" }] },
+      { title: "Sort Dishes", slug: "sort-dishes", icon: "/images/games/moondark/sort-dishes.png", links: [{ label: "Preview", url: "https://drive.google.com/drive/folders/1nWST9PzLMSzhH_jMhn5Jbf5GtlXdLXdo?usp=sharing" }] },
+      { title: "Bomb Factor", slug: "bomb-factor", icon: "/images/games/moondark/bomb-factor.png", links: [{ label: "Preview", url: "https://drive.google.com/drive/folders/1VBX_NiMZ_9YFysKX126MFjQfiwrzdqZs?usp=sharing" }] },
+      { title: "Candy Factory ASMR", slug: "candy-factory-asmr", icon: "/images/games/moondark/candy-factory-asmr.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.moondark.candyfactory" }, { label: "AppBrain", url: "https://www.appbrain.com/app/candy-factory-asmr/com.moondark.candyfactory" }] },
+      { title: "Choo Charles Pixel Demolition", slug: "choo-charles-pixel-demolition", icon: "/images/games/moondark/choo-charles-pixel-demolition.png", links: [{ label: "AppBrain", url: "https://www.appbrain.com/app/choo-charles-pixel-demolition/com.moondark.choocharlespixel" }] },
+      { title: "Plane Factory", slug: "plane-factory", icon: "/images/games/moondark/plane-factory.png", links: [{ label: "Preview", url: "https://drive.google.com/drive/folders/1PScZAPiKQrJPBmwI5e1RYwVMgNd-z4hv?usp=sharing" }] },
+      { title: "Cars Rally Merge", slug: "cars-rally-merge", icon: "/images/games/moondark/cars-rally-merge.png", links: [{ label: "AppBrain", url: "https://www.appbrain.com/app/cars-rally-merge/com.moondark.carsrallymerge" }] },
+      { title: "My Gym Empire", slug: "my-gym-empire", icon: "/images/games/moondark/my-gym-empire.png", links: [{ label: "AppBrain", url: "https://www.appbrain.com/app/my-gym-empire/com.moondark.mygymempire" }] },
+      { title: "Sweet Bite", slug: "sweet-bite", icon: "/images/games/moondark/sweet-bite.png", links: [{ label: "AppBrain", url: "https://www.appbrain.com/app/sweet-bite/com.moondark.sweetbite" }] },
+    ],
+  },
+  {
+    name: "Basix Games",
+    slug: "basix-games",
+    logo: "/images/companies/basix-games.png",
+    devUrl: "https://play.google.com/store/apps/dev?gl=US&hl=en_US&id=7669525331491515997",
+    devUrlLabel: "Play Store Developer Page",
+    games: [
+      { title: "Direct The Shot", slug: "direct-the-shot", icon: "/images/games/basix-games/direct-the-shot.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.basixgames.directtheshot" }] },
+      { title: "Drive By Run", slug: "drive-by-run", icon: "/images/games/basix-games/drive-by-run.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.basixgames.drivebyrun" }] },
+      { title: "Destroy To Build", slug: "destroy-to-build", icon: "/images/games/basix-games/destroy-to-build.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.basixgames.destroytobuild" }] },
+      { title: "Magnet Pro", slug: "magnet-pro", icon: "/images/games/basix-games/magnet-pro.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.basixgames.magnetpro" }] },
+    ],
+  },
+  {
+    name: "Duuby",
+    slug: "duuby",
+    logo: "/images/companies/duuby.png",
+    devUrl: "https://play.google.com/store/apps/dev?gl=US&hl=tr&id=6259433668137650568",
+    devUrlLabel: "Play Store Developer Page",
+    games: [
+      { title: "Blade Duo", slug: "blade-duo", icon: "/images/games/duuby/blade-duo.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.BladeDuo" }] },
+      { title: "Cargo Picker", slug: "cargo-picker", icon: "/images/games/duuby/cargo-picker.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.CargoPicker" }] },
+      { title: "Heist Day", slug: "heist-day", icon: "/images/games/duuby/heist-day.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.HeistDay" }] },
+      { title: "Let Me Pass", slug: "let-me-pass", icon: "/images/games/duuby/let-me-pass.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.LetMePass" }] },
+      { title: "Couple Land", slug: "couple-land", icon: "/images/games/duuby/couple-land.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.CoupleLand" }] },
+      { title: "Trivia Defence", slug: "trivia-defence", icon: "/images/games/duuby/trivia-defence.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.TriviaDefence" }] },
+      { title: "Mission Drift", slug: "mission-drift", icon: "/images/games/duuby/mission-drift.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.MissionDrift" }] },
+      { title: "Mug DIY", slug: "mug-diy", icon: "/images/games/duuby/mug-diy.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.MugDIY" }] },
+      { title: "Snow Globe DIY", slug: "snow-globe-diy", icon: "/images/games/duuby/snow-globe-diy.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.SnowGlobeDIY" }] },
+      { title: "Fashion Challenge", slug: "fashion-challenge", icon: "/images/games/duuby/fashion-challenge.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.FashionChallange" }] },
+      { title: "Voxel Placer", slug: "voxel-placer", icon: "/images/games/duuby/voxel-placer.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.VoxelPlacer" }] },
+      { title: "Magnet Hero", slug: "magnet-hero", icon: "/images/games/duuby/magnet-hero.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.MagnetHero" }] },
+      { title: "Robbery Driver", slug: "robbery-driver", icon: "/images/games/duuby/robbery-driver.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.RobberyDriver" }] },
+      { title: "Till The Last Monster", slug: "till-the-last-monster", icon: "/images/games/duuby/till-the-last-monster.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.TillTheLastMonster" }] },
+      { title: "Draw & Fall", slug: "draw-and-fall", icon: "/images/games/duuby/draw-and-fall.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.DrawandFall" }] },
+      { title: "Truck Rush", slug: "truck-rush", icon: "/images/games/duuby/truck-rush.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.TruckRush" }] },
+      { title: "Paint Ball", slug: "paint-ball", icon: "/images/games/duuby/paint-ball.png", links: [{ label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.Duuby.PaintBall" }] },
+      { title: "Slinger Guys", slug: "slinger-guys", links: [{ label: "Preview", url: "https://drive.google.com/file/d/16C9av2tAfsiUVpCTxATO1H464mVJ4nHO/view?usp=sharing" }] },
+      { title: "Forever Together", slug: "forever-together", links: [{ label: "Preview", url: "https://drive.google.com/file/d/1DqdAeKrKo8dOJnWG-Kv1VpOaVOHaCeed/view?usp=sharing" }] },
+    ],
+  },
+];
+
+export const allGames = companies.flatMap((company) =>
+  company.games.map((game) => ({ ...game, company: company.name, companySlug: company.slug }))
+);

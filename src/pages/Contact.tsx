@@ -1,0 +1,37 @@
+import { Seo } from "../components/Seo";
+import { site } from "../data/site";
+
+export default function Contact() {
+  return (
+    <>
+      <Seo title="Contact" description={`Get in touch with ${site.name}.`} path="/contact" />
+
+      <section className="container-page flex min-h-[60vh] flex-col justify-center py-20">
+        <p className="font-display text-sm uppercase tracking-[0.25em] text-accent">Contact</p>
+        <h1 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-tight text-paper md:text-5xl">
+          Let's talk
+        </h1>
+        <p className="mt-4 max-w-lg text-base text-muted md:text-lg">
+          Open to new opportunities in 3D art, game art and Unity development. Reach out directly.
+        </p>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a
+            href={`mailto:${site.email}`}
+            className="rounded-full bg-paper px-6 py-3 text-center font-display text-sm font-medium text-ink transition-colors hover:bg-accent"
+          >
+            {site.email}
+          </a>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-line px-6 py-3 text-center font-display text-sm font-medium text-paper transition-colors hover:border-accent hover:text-accent"
+          >
+            LinkedIn Profile
+          </a>
+        </div>
+      </section>
+    </>
+  );
+}
