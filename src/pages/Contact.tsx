@@ -7,19 +7,15 @@ export default function Contact() {
     <>
       <Seo title="Contact" description={`Get in touch with ${site.name}.`} path="/contact" />
 
-      <section className="container-page flex min-h-[60vh] flex-col justify-center py-20">
-        <p className="font-display text-sm uppercase tracking-[0.25em] text-accent">Contact</p>
-        <h1 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-tight text-paper md:text-5xl">
-          Let's talk
+      <section className="container-page py-6 md:py-8">
+        <h1 className="font-display text-2xl font-bold tracking-tight text-paper md:text-3xl">
+          Contact
         </h1>
-        <p className="mt-4 max-w-lg text-base text-muted md:text-lg">
-          Open to new opportunities in 3D art and game art. Reach out directly.
-        </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <div className="mt-6 flex flex-col gap-2 max-w-sm">
           <a
             href={`mailto:${site.email}`}
-            className="rounded-full bg-paper px-6 py-3 text-center font-display text-sm font-medium text-ink transition-colors hover:bg-accent"
+            className="rounded-md border border-line/70 bg-panel/40 px-4 py-3 text-sm text-paper transition-colors hover:border-accent/50"
           >
             {site.email}
           </a>
@@ -27,19 +23,19 @@ export default function Contact() {
             href={site.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-line px-6 py-3 text-center font-display text-sm font-medium text-paper transition-colors hover:border-accent hover:text-accent"
+            className="rounded-md border border-line/70 bg-panel/40 px-4 py-3 text-sm text-paper transition-colors hover:border-accent/50"
           >
-            LinkedIn Profile
+            LinkedIn
           </a>
           <Link
             to="/about#cv"
-            className="rounded-full border border-line px-6 py-3 text-center font-display text-sm font-medium text-paper transition-colors hover:border-accent hover:text-accent"
+            className="rounded-md border border-line/70 bg-panel/40 px-4 py-3 text-sm text-paper transition-colors hover:border-accent/50"
           >
-            View CV
+            CV
           </Link>
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-line/70 pt-8">
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-line/70 pt-6">
           {platforms.map((platform) => (
             <a
               key={platform.url}

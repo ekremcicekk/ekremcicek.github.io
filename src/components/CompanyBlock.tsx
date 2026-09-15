@@ -1,20 +1,20 @@
 import type { Company } from "../data/types";
-import { GameCard } from "./GameCard";
+import { WorkTile } from "./WorkTile";
 import { asset } from "../lib/asset";
 
 export function CompanyBlock({ company }: { company: Company }) {
   return (
-    <section id={company.slug} className="scroll-mt-24 border-t border-line/70 py-14 first:border-t-0 first:pt-0">
-      <div className="mb-8 flex flex-wrap items-center gap-4">
+    <section id={company.slug} className="scroll-mt-20 border-t border-line/70 py-10 first:border-t-0 first:pt-0">
+      <div className="mb-6 flex flex-wrap items-center gap-3">
         <img
           src={asset(company.logo)}
           alt={`${company.name} logo`}
           loading="lazy"
-          className="h-14 w-14 rounded-xl border border-line/70 object-cover"
+          className="h-10 w-10 rounded-md border border-line/70 object-cover"
         />
         <div>
-          <h2 className="font-display text-2xl font-semibold text-paper">{company.name}</h2>
-          <p className="text-sm text-muted">
+          <h2 className="font-display text-lg font-semibold text-paper">{company.name}</h2>
+          <p className="text-xs text-muted">
             {company.games.length} shipped {company.games.length === 1 ? "title" : "titles"}
             {company.devUrl && (
               <>
@@ -33,9 +33,9 @@ export function CompanyBlock({ company }: { company: Company }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:gap-3 lg:grid-cols-6">
         {company.games.map((game) => (
-          <GameCard key={game.slug} game={game} />
+          <WorkTile key={game.slug} game={game} />
         ))}
       </div>
     </section>

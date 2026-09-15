@@ -26,35 +26,25 @@ export default function About() {
     <>
       <Seo title="About" description="About Ekrem Cicek, a 3D artist and game artist." path="/about" />
 
-      <section className="container-page py-16 md:py-20">
-        <p className="font-display text-sm uppercase tracking-[0.25em] text-accent">About</p>
-        <h1 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-tight text-paper md:text-5xl">
-          Ekrem Cicek
+      <section className="container-page py-6 md:py-8">
+        <h1 className="font-display text-2xl font-bold tracking-tight text-paper md:text-3xl">
+          About
         </h1>
 
-        <div className="mt-8 grid gap-12 md:grid-cols-[2fr_1fr]">
-          <div className="space-y-5 text-base leading-relaxed text-muted md:text-lg">
-            <p>
-              Ekrem Cicek is a 3D artist and game artist who has contributed to{" "}
-              <span className="text-paper">{allGames.length}+ shipped mobile games</span> across{" "}
-              <span className="text-paper">{companies.length} studios</span> —{" "}
-              {companies.map((c) => c.name).join(", ")} — released on the App Store and Google
-              Play.
-            </p>
-            <p>
-              The work spans hyper-casual and casual mobile titles, from concept through to live
-              release, publishing, and store presence, alongside 3D art and Unity assets published
-              on the Unity Asset Store, Fab, ArtStation and Sketchfab.
-            </p>
-          </div>
+        <div className="mt-6 grid gap-10 md:grid-cols-[2fr_1fr]">
+          <p className="text-base leading-relaxed text-muted">
+            {allGames.length}+ shipped mobile games across {companies.length} studios —{" "}
+            {companies.map((c) => c.name).join(", ")} — plus 3D art and Unity assets published on
+            the Unity Asset Store, Fab, ArtStation and Sketchfab.
+          </p>
 
           <div>
-            <h2 className="font-display text-sm uppercase tracking-wide text-muted">Skills</h2>
-            <ul className="mt-4 space-y-3">
+            <h2 className="font-display text-sm font-semibold text-paper">Skills</h2>
+            <ul className="mt-3 flex flex-wrap gap-2">
               {skills.map((skill) => (
                 <li
                   key={skill}
-                  className="rounded-lg border border-line/70 bg-panel/40 px-4 py-3 text-sm text-paper"
+                  className="rounded-md border border-line/70 bg-panel/40 px-3 py-1.5 text-xs text-paper"
                 >
                   {skill}
                 </li>
@@ -63,7 +53,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="mt-16 max-w-2xl">
+        <div className="mt-10 max-w-2xl">
           <CvPreview />
         </div>
       </section>

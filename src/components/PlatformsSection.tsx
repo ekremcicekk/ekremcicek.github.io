@@ -3,17 +3,10 @@ import { platforms } from "../data/site";
 export function PlatformsSection() {
   return (
     <section className="border-t border-line/70">
-      <div className="container-page py-20 md:py-24">
-        <div className="mb-10">
-          <h2 className="font-display text-2xl font-semibold text-paper md:text-3xl">
-            3D art & marketplaces
-          </h2>
-          <p className="mt-2 max-w-md text-sm text-muted">
-            Unity assets and 3D work published across these platforms.
-          </p>
-        </div>
+      <div className="container-page py-12 md:py-16">
+        <h2 className="mb-6 font-display text-lg font-semibold text-paper">3D art & marketplaces</h2>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {platforms.map((platform) => (
             <a
               key={platform.url}
