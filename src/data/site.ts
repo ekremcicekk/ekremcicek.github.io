@@ -3,7 +3,7 @@ export const site = {
   role: "3D Artist / Game Artist / Unity Developer",
   email: "ekrem78ekrem@gmail.com",
   linkedin: "https://www.linkedin.com/in/ekremcicek/",
-  url: "https://ekremcicek.github.io",
+  url: "https://ekremcicekk.github.io/ekremcicek.github.io",
   description:
     "Portfolio of Ekrem Cicek, a 3D artist, game artist and Unity developer who has shipped dozens of mobile games across Dodo Games, Moondark, Basix Games and Duuby.",
 };
