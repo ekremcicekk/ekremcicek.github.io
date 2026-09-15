@@ -1,12 +1,13 @@
 import type { Company } from "../data/types";
 import { GameCard } from "./GameCard";
+import { asset } from "../lib/asset";
 
 export function CompanyBlock({ company }: { company: Company }) {
   return (
     <section id={company.slug} className="scroll-mt-24 border-t border-line/70 py-14 first:border-t-0 first:pt-0">
       <div className="mb-8 flex flex-wrap items-center gap-4">
         <img
-          src={company.logo}
+          src={asset(company.logo)}
           alt={`${company.name} logo`}
           loading="lazy"
           className="h-14 w-14 rounded-xl border border-line/70 object-cover"

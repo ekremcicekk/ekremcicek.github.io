@@ -1,4 +1,5 @@
 import type { Game } from "../data/types";
+import { asset } from "../lib/asset";
 
 interface GameCardProps {
   game: Game;
@@ -18,7 +19,7 @@ export function GameCard({ game, companyName }: GameCardProps) {
       >
         {game.icon ? (
           <img
-            src={game.icon}
+            src={asset(game.icon)}
             alt={`${game.title} icon`}
             loading="lazy"
             decoding="async"
