@@ -1,28 +1,14 @@
 import { Link } from "react-router-dom";
 import { Seo } from "../components/Seo";
-import { WorkTile } from "../components/WorkTile";
+import { FeaturedGameCard } from "../components/FeaturedGameCard";
 import { PlatformsSection } from "../components/PlatformsSection";
 import { companies, allGames } from "../data/companies";
 import { site } from "../data/site";
 
-const featuredSlugs = [
-  "stone-skipping-3d",
-  "underwater-hunting",
-  "ultimate-offroad-simulator",
-  "car-crash-stunt-parkour",
-  "portal-runner",
-  "choo-charles-pixel-demolition",
-  "candy-factory-asmr",
-  "blade-duo",
-  "heist-day",
-  "direct-the-shot",
-  "spiral-drill-run",
-  "dozer-race",
-];
-
-const featured = featuredSlugs
-  .map((slug) => allGames.find((game) => game.slug === slug))
-  .filter((game): game is (typeof allGames)[number] => Boolean(game));
+const latestCompany = companies[0];
+const latest = latestCompany.games
+  .slice(0, 8)
+  .map((game) => ({ ...game, company: latestCompany.name, companySlug: latestCompany.slug }));
 
 export default function Home() {
   return (
@@ -31,7 +17,7 @@ export default function Home() {
 
       <section className="container-page flex flex-wrap items-end justify-between gap-4 py-6 md:py-8">
         <div>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-paper md:text-3xl">
+          <h1 className="font-display text-2xl font-extrabold tracking-tighter text-paper md:text-3xl">
             {site.name}
           </h1>
           <p className="mt-1 text-sm text-muted md:text-base">
@@ -47,9 +33,12 @@ export default function Home() {
       </section>
 
       <section className="container-page pb-16">
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:gap-3 lg:grid-cols-6">
-          {featured.map((game) => (
-            <WorkTile key={game.slug} game={game} companyName={game.company} />
+        <h2 className="mb-4 font-display text-lg font-semibold text-paper">
+          Latest work — {latestCompany.name}
+        </h2>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {latest.map((game) => (
+            <FeaturedGameCard key={game.slug} game={game} companyName={game.company} />
           ))}
         </div>
       </section>

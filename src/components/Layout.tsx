@@ -71,7 +71,7 @@ export function Layout() {
     <div className="min-h-screen flex flex-col bg-ink text-paper">
       <header className="sticky top-0 z-40 border-b border-line/70 bg-ink/90 backdrop-blur-sm">
         <div className="container-page flex h-14 items-center justify-between md:h-16">
-          <NavLink to="/" className="font-display text-base font-bold tracking-tight">
+          <NavLink to="/" className="font-display text-base font-extrabold tracking-tighter">
             Ekrem Cicek
           </NavLink>
 

@@ -27,7 +27,7 @@ export default function About() {
       <Seo title="About" description="About Ekrem Cicek, a 3D artist and game artist." path="/about" />
 
       <section className="container-page py-6 md:py-8">
-        <h1 className="font-display text-2xl font-bold tracking-tight text-paper md:text-3xl">
+        <h1 className="font-display text-2xl font-extrabold tracking-tighter text-paper md:text-3xl">
           About
         </h1>
 

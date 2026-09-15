@@ -13,7 +13,7 @@ export default function Experience() {
 
       <section className="container-page py-6 md:py-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <h1 className="font-display text-2xl font-bold tracking-tight text-paper md:text-3xl">
+          <h1 className="font-display text-2xl font-extrabold tracking-tighter text-paper md:text-3xl">
             Experience
           </h1>
           <nav className="flex flex-wrap gap-2">

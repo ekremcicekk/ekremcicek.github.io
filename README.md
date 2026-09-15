@@ -19,13 +19,16 @@ src/
   data/
     types.ts        # Company / Game / StoreLink types
     companies.ts     # All studios + shipped games — THE content source of truth
-    site.ts          # Name, role, email, LinkedIn, nav links
-  components/         # Layout, GameCard, CompanyBlock, Seo
+    assets.ts        # Unity Asset Store listings (image-first showcase on Work)
+    site.ts          # Name, role, email, LinkedIn, CV path, nav, platform links
+  components/         # Layout, WorkTile, FeaturedGameCard, AssetTile, CompanyBlock, Seo
   pages/              # Home, Work, Experience, About, Contact
 public/
   images/
     companies/        # Studio logos
     games/<studio>/    # Game icons, one folder per studio
+    assets/            # Unity Asset Store thumbnails
+  cv/                  # CV PDF
 ```
 
 ## Everyday workflow: adding or editing a project
@@ -46,14 +49,27 @@ entry to its `games` array:
 }
 ```
 
-Drop the icon file at the matching path under `public/images/games/<studio-slug>/`. That's it —
-it automatically appears on the Home (if you add its slug to `featuredSlugs` in
-[`src/pages/Home.tsx`](src/pages/Home.tsx)), Work, and Experience pages with no other changes.
+Drop the icon file at the matching path under `public/images/games/<studio-slug>/`. That's it — it
+automatically appears on Work and Experience with no other changes.
+
+**Order matters for Dodo Games (the current studio):** its `games` array is newest-first — add new
+titles at the *top* of that array. The Home page's "Latest work" section just shows the first 8
+entries of `companies[0].games`, so the newest title always leads. The other studios' order doesn't
+drive anything and can stay as-is.
 
 ### Add a new studio
 
 Add a new object to the `companies` array in `companies.ts` with `name`, `slug`, `logo`, `devUrl`,
-and a `games` array. Drop the logo at `public/images/companies/<slug>.png`.
+and a `games` array. Drop the logo at `public/images/companies/<slug>.png`. If this becomes the
+current/most-recent studio, move its object to the front of the `companies` array (index 0) so it
+drives the Home page's "Latest work" section.
+
+### Add or update a Unity Asset Store listing
+
+Add an entry to the `unityAssets` array in [`src/data/assets.ts`](src/data/assets.ts) with `id`,
+`title`, `slug`, `category` (`"Templates"` or `"3D"`), `href` (the asset's store URL) and `img`
+(path under `public/images/assets/`). Drop the thumbnail at that path. Shown on the Work page's
+"Unity Asset Store" tab.
 
 ### Update contact info, name, or role
 
@@ -108,3 +124,7 @@ and shipped game titles/icons/links — no employment dates, job titles, per-pro
 or skills detail. Nothing was invented to fill those gaps; the About page and skills list state
 only what's directly evidenced by the shipped work. Extend `companies.ts` and `About.tsx` directly
 as more detail becomes available.
+
+Unity Asset Store listings in `src/data/assets.ts` were pulled from the live publisher page
+(assetstore.unity.com/publishers/78187, audited 2026-09-15) — all 43 listings at the time, with
+thumbnails downloaded locally rather than hotlinked.

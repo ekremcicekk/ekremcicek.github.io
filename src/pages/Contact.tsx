@@ -8,7 +8,7 @@ export default function Contact() {
       <Seo title="Contact" description={`Get in touch with ${site.name}.`} path="/contact" />
 
       <section className="container-page py-6 md:py-8">
-        <h1 className="font-display text-2xl font-bold tracking-tight text-paper md:text-3xl">
+        <h1 className="font-display text-2xl font-extrabold tracking-tighter text-paper md:text-3xl">
           Contact
         </h1>
 
